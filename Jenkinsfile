@@ -22,7 +22,7 @@ pipeline
     			{
 				steps
 				{
-                                      ans = bat "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access"
+                                      bat "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access"
 					
 						
 				}
