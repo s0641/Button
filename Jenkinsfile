@@ -6,15 +6,7 @@ pipeline
     string(name: '$(email)', defaultValue:'')
     string(name: '$(api)', defaultValue:'')
   }
-  stages
-  {
-    stage("cred")
-    {
-    steps
-    {
-        
-    }
-   }
+ 
     stage("build")
     {
     steps
