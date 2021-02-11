@@ -21,24 +21,15 @@ pipeline
     			{
 				steps
 				{
-					script {
-                    				final String url = "https://device.pcloudy.com/api/access"
-						withCredentials([email:api(credentialsId: "jenkins-api-token", variable: "token")]) {
-                        			final String response = sh(script: "curl -s -u $token $url", returnStdout: true).trim()
-							echo response
-                   			       }
+					 final String url = "https://device.pcloudy.com/api/access"
+                    			final data = "$email:$api"
+                     			 sh "response=$curl -d $data -x POST $url"
+                         		echo $response
 				}
 			}
     
 			stage("test")
 			{
-				when
-				{
-					expression
-					{
-						params.executeTest	
-					}
-				}
 				steps
 				{
 					echo 'testing the application...'
