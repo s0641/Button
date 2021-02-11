@@ -21,8 +21,8 @@ pipeline
     			{
 				steps
 				{
-                                        def response=sh """curl -u ${email}:${api} -X POST -H "Content-Type:application/json" https://device.pcloudy.com/api/access"""
-					echo ${response}
+                                        sh """response = $(curl -u ${email}:${api} -X POST -H "Content-Type:application/json" https://device.pcloudy.com/api/access); echo $response"""
+					
 						
 				}
 			}
