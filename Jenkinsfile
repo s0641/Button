@@ -3,8 +3,9 @@ pipeline
 	agent any
 	parameters
 	{
-		string(name: '$(email)', defaultValue:'')
-		string(name: '$(api)', defaultValue:'')
+		string(name: 'email', defaultValue:'')
+		string(name: 'api', defaultValue:'')
+		booleanParam(name: 'executeTest', defaultValue: true, description: '')
 	}
  	stages
 		{
@@ -26,6 +27,13 @@ pipeline
     
 			stage("test")
 			{
+				when
+				{
+					expression
+					{
+						params.executeTest	
+					}
+				}
 				steps
 				{
 					echo 'testing the application...'
