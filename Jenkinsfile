@@ -22,7 +22,7 @@ pipeline
 				steps
 				{
                                        def response= bat "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access"
-					
+					echo $response
 						
 				}
 			}
