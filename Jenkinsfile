@@ -1,8 +1,20 @@
 pipeline
 {
   agent any
+  parameters
+  {
+    string(name: '$(email)', defaultValue:'')
+    string(name: '$(api)', defaultValue:'')
+  }
   stages
   {
+    stage("cred")
+    {
+    steps
+    {
+        
+    }
+   }
     stage("build")
     {
     steps
@@ -11,6 +23,14 @@ pipeline
     }
    }
    
+    stage("upload")
+    {
+    steps
+    {
+        echo 'uploading the application...'
+    }
+   }
+    
    stage("test")
     {
     steps
