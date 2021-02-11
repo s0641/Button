@@ -21,8 +21,7 @@ pipeline
     			{
 				steps
 				{
-                                          
-					def response=sh(script: 'curl -u "${email}:${api}" https://device.pcloudy.com/api/access' ,returnStdout: true)
+                                        def response=sh """curl -u ${email}:${api} -X POST -H "Content-Type:application/json" https://device.pcloudy.com/api/access"""
 					echo ${response}
 						
 				}
