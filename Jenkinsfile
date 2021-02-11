@@ -21,7 +21,7 @@ pipeline
     			{
 				steps
 				{
-                                          sh """
+                                          bat """
 response=$(curl -u "${email}:${api}" https://device.pcloudy.com/api/access)
 echo ${response}
 """
