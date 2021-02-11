@@ -21,10 +21,10 @@ pipeline
     			{
 				steps
 				{
-                                          bat """
-response=$(curl -u "${email}:${api}" https://device.pcloudy.com/api/access)
-echo ${response}
-"""
+                                          
+					def response=sh(script: 'curl -u "${email}:${api}" https://device.pcloudy.com/api/access' ,returnStdout: true)
+					echo ${response}
+						
 				}
 			}
     
