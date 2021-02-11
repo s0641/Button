@@ -21,7 +21,7 @@ pipeline
     			{
 				steps
 				{
-                                        bat "curl -L -u shubham.gupta@sstsinc.com:52xw5q5n4rcnhymmtgmx82hw -X POST -H \"Content-Type:application/json\" https://device.pcloudy.com/api/access;"
+                                        bat "curl -u \"shubham.gupta@sstsinc.com:52xw5q5n4rcnhymmtgmx82hw\" https://device.pcloudy.com/api/access"
 					
 						
 				}
