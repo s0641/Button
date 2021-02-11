@@ -21,7 +21,7 @@ pipeline
     			{
 				steps
 				{
-                                        bat "response = \$(curl -u \${email}:\${api} -X POST -H \"Content-Type:application/json\" https://device.pcloudy.com/api/access); echo \${response}"
+                                        bat "set response = \$(curl -u \${email}:\${api} -X POST -H \"Content-Type:application/json\" https://device.pcloudy.com/api/access); echo \${response}"
 					
 						
 				}
