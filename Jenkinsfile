@@ -21,7 +21,7 @@ pipeline
     			{
 				steps
 				{
-                                        bat "\$(curl -u \${email}:\${api} -X POST -H \"Content-Type:application/json\" https://device.pcloudy.com/api/access);"
+                                        bat "curl -u \${email}:\${api} -X POST -H \"Content-Type:application/json\" https://device.pcloudy.com/api/access;"
 					
 						
 				}
