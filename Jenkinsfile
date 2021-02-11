@@ -21,7 +21,7 @@ pipeline
     			{
 				steps
 				{
-                                        bat "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access"
+                                       def response= bat "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access"
 					
 						
 				}
