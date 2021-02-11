@@ -14,7 +14,7 @@ pipeline
 				steps
 				{
 					echo 'building the application...'
-					echo '$(email)'
+					echo $(email)
 				}
 			}	
    
