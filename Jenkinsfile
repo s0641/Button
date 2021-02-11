@@ -6,36 +6,38 @@ pipeline
 		string(name: '$(email)', defaultValue:'')
 		string(name: '$(api)', defaultValue:'')
 	}
- 
-    stage("build")
-    {
-		steps
+ 	stages
 		{
-			echo 'building the application...'
-		}
-	}	
+    			stage("build")
+    			{
+				steps
+				{
+					echo 'building the application...'
+				}
+			}	
    
-    stage("upload")
-    {
-		steps
-		{
-			echo 'uploading the application...'
-		}
-	}
+    			stage("upload")
+    			{
+				steps
+				{
+					echo 'uploading the application...'
+				}
+			}
     
-	stage("test")
-    {
-		steps
-		{
-			echo 'testing the application...'
-		}
-	}
+			stage("test")
+			{
+				steps
+				{
+					echo 'testing the application...'
+				}
+			}
    
-	stage("deploy")
-    {
-		steps
-		{
-			echo 'deploying the application...'
-		}
-	}
-  } 
+			stage("deploy")
+    			{
+				steps
+				{
+					echo 'deploying the application...'
+				}
+			}
+ 		 } 
+}
