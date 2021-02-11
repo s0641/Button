@@ -21,9 +21,9 @@ pipeline
     			{
 				steps
 				{
-					    final String url = "https://device.pcloudy.com/api/access"
-                    final String data = "$email:$API"
-                      sh "response=$(curl -d $data -x POST $url); echo $response"
+					   final String url = "https://device.pcloudy.com/api/access"
+                    final String data = "${email}:${API}"
+                      sh "response=$(curl -d ${data} -x POST ${url}); echo ${response}"
 				}
 			}
     
