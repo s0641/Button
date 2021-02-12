@@ -5,7 +5,7 @@ pipeline
 	agent any
 	tools
 	{
-		maven 'Maven 3.6.3'
+		
 	}
 	parameters
 	{
@@ -55,7 +55,7 @@ pipeline
 				steps
 				{
 					echo 'testing the application...'
-					echo "M2_HOME = ${M2_HOME}"
+					bat mvn -version
 					
 				}
 			}
