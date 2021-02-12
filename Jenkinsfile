@@ -24,6 +24,7 @@ pipeline
 				{
                                       //bat "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access"
 					def output = bat returnStdout: true, script: 'dir'
+					echo $output
 						
 				}
 			}
