@@ -39,6 +39,9 @@ pipeline
 						def list = output.readLines()
 						def token = list[list.size()-1]
 						echo "Token= ${token}"
+						def jsonSlurper = new JsonSlurper()
+						def object = jsonSlurper.parseText('${token}')
+						echo "answer= ${object}"
 					}
 				}
 			}
