@@ -48,7 +48,6 @@ pipeline
 				steps
 				{
 					echo 'testing the application...'
-					bat mvn -version
 					
 				}
 			}
