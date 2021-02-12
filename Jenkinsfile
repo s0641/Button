@@ -1,4 +1,4 @@
-def status="bat curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access"
+//def status="bat curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access"
 pipeline
 {
 	agent any
@@ -27,7 +27,11 @@ pipeline
 					//def script = '''set status=FALSE 
     					//echo %status%'''   
 					//def status="bat(script:'set status=FALSE', returnStdout: true)"
-					bat "echo ${status}"
+					script
+					{
+						def output = bat returnStdout: true, script: 'dir'
+						echo ${output}
+					}
 					
 						
 				}
