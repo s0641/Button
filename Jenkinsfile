@@ -32,8 +32,8 @@ pipeline
 						def output = bat returnStdout: true, script: "${status}"
 						echo "Hello  ${output}"
 						def list = output.readLines()
-						def token = list[1]
-						echo " ${token}"
+						def token = list[list.size()-1]
+						echo "Token= ${token}"
 						
 						
 						//def token = output.split('{')[1]
