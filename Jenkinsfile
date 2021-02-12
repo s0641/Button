@@ -30,7 +30,7 @@ pipeline
 					script
 					{
 						def output = bat returnStdout: true, script: 'dir'
-						echo ${output}
+						echo "${output}"
 					}
 					
 						
