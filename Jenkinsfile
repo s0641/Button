@@ -22,8 +22,12 @@ pipeline
     			{
 				steps
 				{
-                                      bat "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access"
-					
+                                      //bat "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access"
+					def GIT_COMMIT_EMAIL = bat (
+    					script: 'curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access',
+    					returnStdout: true
+					).trim()
+					echo "Git committer email: ${GIT_COMMIT_EMAIL}"
 						
 				}
 			}
