@@ -40,7 +40,7 @@ pipeline
 						def token = list[list.size()-1]
 						echo "Token= ${token}"
 						def jsonSlurper = new JsonSlurper()
-						def object = jsonSlurper.parseText('${token}')
+						def object = jsonSlurper.parseText("${token}")
 						echo "answer= ${object}"
 					}
 				}
