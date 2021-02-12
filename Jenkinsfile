@@ -29,7 +29,7 @@ pipeline
 					//def status="bat(script:'set status=FALSE', returnStdout: true)"
 					script
 					{
-						def output = bat returnStdout: true, script: $(status)
+						def output = bat returnStdout: true, script: '$(status)'
 						echo "Hello  ${output}"
 					}
 					
