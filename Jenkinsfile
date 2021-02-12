@@ -24,10 +24,10 @@ pipeline
 				{
                                       //bat "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access"
 					
-					def script = '''set status=FALSE 
-    					echo %status%'''   
-					def status = bat(script: script, returnStdout: true)
-					echo "$status" 
+					//def script = '''set status=FALSE 
+    					//echo %status%'''   
+					bat(script:'set status=FALSE', returnStdout: true)
+					
 						
 				}
 			}
