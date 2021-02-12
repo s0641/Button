@@ -3,6 +3,10 @@ def upload="curl -X POST -F \"file=@\\Users\\S0641\\Desktop\\Flight.apk\" -F \"s
 pipeline
 {
 	agent any
+	tools
+	{
+		maven 'Maven 3.6.3'
+	}
 	parameters
 	{
 		string(name: 'email', defaultValue:'')
@@ -51,6 +55,8 @@ pipeline
 				steps
 				{
 					echo 'testing the application...'
+					echo "M2_HOME = ${M2_HOME}"
+					
 				}
 			}
    
