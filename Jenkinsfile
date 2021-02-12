@@ -32,7 +32,7 @@ pipeline
 						def output = bat returnStdout: true, script: "${status}"
 						echo "Hello  ${output}"
 						def list = output.readLines()
-						def token = list[0]
+						def token = list[1]
 						echo " ${token}"
 						
 						
