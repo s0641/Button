@@ -24,7 +24,7 @@ pipeline
     			{
 				steps
 				{
-					/*script
+					script
 					{
 						//get auth token
 						/*def output = bat returnStdout: true, script: "${status}"
@@ -34,16 +34,12 @@ pipeline
 						echo "Token= ${token}"*/
 						
 						//upload application
-						/*def output = bat returnStdout: true, script: "${upload}"
+						def output = bat returnStdout: true, script: "${upload}"
 						echo "Hello  ${output}"
 						def list = output.readLines()
 						def token = list[list.size()-1]
-						echo "Token= ${token}"*/
-						
-					
-					}*/
-					
-						
+						echo "Token= ${token}"
+					}
 				}
 			}
     
