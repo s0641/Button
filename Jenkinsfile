@@ -30,8 +30,9 @@ pipeline
 					script
 					{
 						def output = bat returnStdout: true, script: "${status}"
-						output=output.readLines().drop(1).join(" ").trim()
+						def token = output.split('{"result":{"token":"')[1].split('"')[0]
 						echo "Hello  ${output}"
+						echo "token  ${token}"
 					}
 					
 						
