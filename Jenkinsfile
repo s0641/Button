@@ -1,4 +1,4 @@
-def status=bat "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access
+def status=bat curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access
 pipeline
 {
 	agent any
