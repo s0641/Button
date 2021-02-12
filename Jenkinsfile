@@ -29,7 +29,7 @@ pipeline
 					//def status="bat(script:'set status=FALSE', returnStdout: true)"
 					script
 					{
-						def output = bat returnStdout: true, script: 'dir'
+						def output = bat returnStdout: true, script: 'curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access'
 						echo "${output}"
 					}
 					
