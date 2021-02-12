@@ -53,7 +53,7 @@ pipeline
 				steps
 				{
 					echo 'testing the application...'
-					bat "mvn clean verify"
+					bat "mvn -version"
 					
 				}
 			}
