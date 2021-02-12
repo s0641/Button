@@ -30,7 +30,7 @@ pipeline
 					script
 					{
 						def output = bat returnStdout: true, script: "${status}"
-						set -x
+						output=output.readLines().drop(1).join(" ")
 						echo "Hello  ${output}"
 					}
 					
