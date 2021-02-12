@@ -24,7 +24,7 @@ pipeline
     			{
 				steps
 				{
-					script
+					/*script
 					{
 						//get auth token
 						/*def output = bat returnStdout: true, script: "${status}"
@@ -40,7 +40,7 @@ pipeline
 						def token = list[list.size()-1]
 						echo "Token= ${token}"
 						
-					}
+					}*/
 				}
 			}
     
