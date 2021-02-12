@@ -1,4 +1,5 @@
 def status="curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access"
+def upload="curl -X POST -F "file=C:\Users\S0641\Desktop\Flight.apk" -F "source_type=raw" -F "token=xc4n6h4nq5h2j6v2csd7f23c" -F "filter=all" https://device.pcloudy.com/api/upload_file"
 pipeline
 {
 	agent any
@@ -22,22 +23,23 @@ pipeline
     			{
 				steps
 				{
-                                      //bat "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access"
-					
-					//def script = '''set status=FALSE 
-    					//echo %status%'''   
-					//def status="bat(script:'set status=FALSE', returnStdout: true)"
 					script
 					{
-						def output = bat returnStdout: true, script: "${status}"
+						//get auth token
+						/*def output = bat returnStdout: true, script: "${status}"
+						echo "Hello  ${output}"
+						def list = output.readLines()
+						def token = list[list.size()-1]
+						echo "Token= ${token}"*/
+						
+						//upload application
+						def output = bat returnStdout: true, script: "${upload}"
 						echo "Hello  ${output}"
 						def list = output.readLines()
 						def token = list[list.size()-1]
 						echo "Token= ${token}"
 						
-						
-						//def token = output.split('{')[1]
-						//echo "token  ${token}"
+					
 					}
 					
 						
