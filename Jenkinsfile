@@ -1,4 +1,4 @@
-def status="bat(script:'set status=FALSE', returnStdout: true)"
+def status=bat "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access
 pipeline
 {
 	agent any
