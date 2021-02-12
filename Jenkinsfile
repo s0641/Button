@@ -1,3 +1,4 @@
+def status="bat(script:'set status=FALSE', returnStdout: true)"
 pipeline
 {
 	agent any
@@ -25,8 +26,8 @@ pipeline
 					
 					//def script = '''set status=FALSE 
     					//echo %status%'''   
-					def status="bat(script:'set status=FALSE', returnStdout: true)"
-					bat "echo $status"
+					//def status="bat(script:'set status=FALSE', returnStdout: true)"
+					bat "echo ${status}"
 					
 						
 				}
