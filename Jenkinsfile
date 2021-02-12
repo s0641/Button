@@ -3,10 +3,7 @@ def upload="curl -X POST -F \"file=@\\Users\\S0641\\Desktop\\Flight.apk\" -F \"s
 pipeline
 {
 	agent any
-	tools
-	{
-		
-	}
+	
 	parameters
 	{
 		string(name: 'email', defaultValue:'')
