@@ -23,11 +23,12 @@ pipeline
 				steps
 				{
                                       //bat "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access"
-				script
-					{	
-					def output = bat returnStdout: true, script: 'dir'
-					echo $output
-					}	
+					
+					def script = '''set status=FALSE 
+    					echo %status%'''   
+					def status = bat(script: script, returnStdout: true)
+					echo "$status" 
+						
 				}
 			}
     
