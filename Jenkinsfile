@@ -30,7 +30,7 @@ pipeline
 					script
 					{
 						def output = bat returnStdout: true, script: 'curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access'
-						echo "${output}"
+						echo "Hello  ${output}"
 					}
 					
 						
