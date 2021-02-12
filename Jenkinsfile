@@ -30,6 +30,7 @@ pipeline
 					script
 					{
 						def output = bat returnStdout: true, script: "${status}"
+						set +x
 						echo "Hello  ${output}"
 					}
 					
