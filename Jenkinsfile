@@ -37,9 +37,9 @@ pipeline
 						echo "Token= ${token}"
 						
 						//upload application
-						def upload = bat returnStdout: true, script: "${upload}"
-						echo "Hello  ${upload}"
-						def list = upload.readLines()
+						def uploadFile = bat returnStdout: true, script: "${upload}"
+						echo "Hello  ${uploadFile}"
+						def list = uploadFile.readLines()
 						def file = list[list.size()-1]
 						echo "File= ${file}"
 						
