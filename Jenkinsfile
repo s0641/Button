@@ -1,5 +1,5 @@
 def status="curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access | C:\\Users\\S0641\\Desktop\\jq-win64.exe \".result.token\"" 
-def upload="curl -X POST -F \"file=@\\Users\\S0641\\Desktop\\Flight.apk\" -F \"source_type=raw\" -F \"token=${params.token}\" -F \"filter=all\" https://device.pcloudy.com/api/upload_file"
+def upload="curl -X POST -F \"file=@\\Users\\S0641\\Desktop\\Flight.apk\" -F \"source_type=raw\" -F \"token=dr67gyp53hmr67kw39vyp2mm\" -F \"filter=all\" https://device.pcloudy.com/api/upload_file"
 pipeline
 {
 	agent any
