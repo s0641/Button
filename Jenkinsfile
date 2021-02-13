@@ -38,7 +38,7 @@ pipeline
 						
 						
 						//upload application
-						def uploadFile = bat returnStdout: true, script: "curl -X POST -F \"file=@\\Users\\S0641\\Desktop\\Flight.apk\" -F \"source_type=raw\" -F \"token=${token} -F \"filter=all\" https://device.pcloudy.com/api/upload_file"
+						def uploadFile = bat returnStdout: true, script: "curl -X POST -F \"file=@\\Users\\S0641\\Desktop\\Flight.apk\" -F \"source_type=raw\" -F \"token=${token}\" -F \"filter=all\" https://device.pcloudy.com/api/upload_file"
 						echo "Hello  ${uploadFile}"
 						def arr = uploadFile.readLines()
 						def file = arr[arr.size()-1]
