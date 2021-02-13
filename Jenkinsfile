@@ -39,8 +39,8 @@ pipeline
 						//upload application
 						def uploadFile = bat returnStdout: true, script: "${upload}"
 						echo "Hello  ${uploadFile}"
-						def list = uploadFile.readLines()
-						def file = list[list.size()-1]
+						def arr = uploadFile.readLines()
+						def file = arr[arr.size()-1]
 						echo "File= ${file}"
 						
 					}
