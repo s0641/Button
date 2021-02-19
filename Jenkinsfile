@@ -1,4 +1,4 @@
-def status="curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access | jq \".result.token\"" 
+def status="curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access | C:\\Users\\S0641\\Desktop\\jq.exe \".result.token\"" 
 //def upload="curl -X POST -F \"file=@\\Users\\S0641\\Desktop\\Flight.apk\" -F \"source_type=raw\" -F \"token=\"${params.token}\" -F \"filter=all\" https://device.pcloudy.com/api/upload_file"
 pipeline
 {
@@ -38,7 +38,7 @@ pipeline
 						
 						
 						//upload application
-						def uploadFile = bat returnStdout: true, script: "curl -X POST -F \"file=@\\Users\\S0641\\Desktop\\Flight.apk\" -F \"source_type=raw\" -F \"token=${token}\" -F \"filter=all\" https://device.pcloudy.com/api/upload_file | jq \".result.file\""
+						def uploadFile = bat returnStdout: true, script: "curl -X POST -F \"file=@\\Users\\S0641\\Desktop\\Flight.apk\" -F \"source_type=raw\" -F \"token=${token}\" -F \"filter=all\" https://device.pcloudy.com/api/upload_file | C:\\Users\\S0641\\Desktop\\jq.exe \".result.file\""
 						echo "Hello  ${uploadFile}"
 						def arr = uploadFile.readLines()
 						def file = arr[arr.size()-1]
