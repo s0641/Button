@@ -53,6 +53,8 @@ pipeline
 			{
 				steps
 				{
+					script
+					{
 					echo 'testing the application...'
 					if (isUnix()) 
 					{
@@ -73,7 +75,7 @@ pipeline
 						 bat "mvn -version"
     				       	}
 					
-					
+					}
 				}
 			}
    
