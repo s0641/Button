@@ -61,18 +61,19 @@ pipeline
        						def uname = sh script: 'uname', returnStdout: true
         					if (uname.startsWith("Darwin")) 
 						{
-           						return "Macos"
+           						echo "Macos"
         					}
         					// Optionally add 'else if' for other Unix OS  
         					else 
 						{
-            						return "Linux"
+            						echo "Linux"
         				        }
     					}
    				 	else 
 					{
-        					return "Windows"
 						 bat "mvn -version"
+        					echo "Windows"
+						
     				       	}
 					
 					}
