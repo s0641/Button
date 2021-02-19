@@ -1,4 +1,4 @@
-def status="curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access | C:\\Users\\S0641\\Desktop\\jq-win64.exe \".result.token\"" 
+def status="curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access | jq \".result.token\"" 
 //def upload="curl -X POST -F \"file=@\\Users\\S0641\\Desktop\\Flight.apk\" -F \"source_type=raw\" -F \"token=\"${params.token}\" -F \"filter=all\" https://device.pcloudy.com/api/upload_file"
 pipeline
 {
