@@ -35,31 +35,57 @@ pipeline
        							def uname = sh script: 'uname', returnStdout: true
         						if (uname.startsWith("Darwin")) 
 							{
+								//get auth token
+								def output = sh returnStdout: true, script: "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access | jq \".result.token\""
+								echo "Hello  ${output}"
+								def list = output.readLines()
+								def token = list[list.size()-1]
+								echo "Token= ${token}"
+								
+								def uploadFile = sh returnStdout: true, script: "curl -X POST -F \"file=@\\Users\\S0641\\Desktop\\Flight.apk\" -F \"source_type=raw\" -F \"token=${token}\" -F \"filter=all\" https://device.pcloudy.com/api/upload_file | jq \".result.file\""
+								echo "Hello  ${uploadFile}"
+								def arr = uploadFile.readLines()
+								def file = arr[arr.size()-1]
+								echo "File= ${file}"
+								
            							echo "Macos"
         						}
         						// Optionally add 'else if' for other Unix OS  
         						else 
 							{
+								//get auth token
+								def output = sh returnStdout: true, script: "curl -u \"${params.email}: ${params.api}\" https://device.pcloudy.com/api/access | jq \".result.token\""
+								echo "Hello  ${output}"
+								def list = output.readLines()
+								def token = list[list.size()-1]
+								echo "Token= ${token}"
+								
+								def uploadFile = sh returnStdout: true, script: "curl -X POST -F \"file=@\\Users\\S0641\\Desktop\\Flight.apk\" -F \"source_type=raw\" -F \"token=${token}\" -F \"filter=all\" https://device.pcloudy.com/api/upload_file | jq \".result.file\""
+								echo "Hello  ${uploadFile}"
+								def arr = uploadFile.readLines()
+								def file = arr[arr.size()-1]
+								echo "File= ${file}"
+								
             							echo "Linux"
         				 	       }
     						}	
    				 		else 
 						{
 							 //get auth token
-						def output = bat returnStdout: true, script: "${status}"
-						echo "Hello  ${output}"
-						def list = output.readLines()
-						def token = list[list.size()-1]
-						echo "Token= ${token}"
+							def output = bat returnStdout: true, script: "${status}"
+							echo "Hello  ${output}"
+							def list = output.readLines()
+							def token = list[list.size()-1]
+							echo "Token= ${token}"
 						
 						
-						//upload application
-						def uploadFile = bat returnStdout: true, script: "curl -X POST -F \"file=@\\Users\\S0641\\Desktop\\Flight.apk\" -F \"source_type=raw\" -F \"token=${token}\" -F \"filter=all\" https://device.pcloudy.com/api/upload_file | C:\\Users\\S0641\\Desktop\\jq.exe \".result.file\""
-						echo "Hello  ${uploadFile}"
-						def arr = uploadFile.readLines()
-						def file = arr[arr.size()-1]
-						echo "File= ${file}"
-        					echo "Windows"
+							//upload application
+							def uploadFile = bat returnStdout: true, script: "curl -X POST -F \"file=@\\Users\\S0641\\Desktop\\Flight.apk\" -F \"source_type=raw\" -F \"token=${token}\" -F \"filter=all\" https://device.pcloudy.com/api/upload_file | C:\\Users\\S0641\\Desktop\\jq.exe \".result.file\""
+							echo "Hello  ${uploadFile}"
+							def arr = uploadFile.readLines()
+							def file = arr[arr.size()-1]
+							echo "File= ${file}"
+        						echo "Windows"
 						
     				       		}
 						
