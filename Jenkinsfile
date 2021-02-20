@@ -29,7 +29,23 @@ pipeline
 				{
 					script
 					{
-						//get auth token
+						
+						if (isUnix()) 
+						{
+       							def uname = sh script: 'uname', returnStdout: true
+        						if (uname.startsWith("Darwin")) 
+							{
+           							echo "Macos"
+        						}
+        						// Optionally add 'else if' for other Unix OS  
+        						else 
+							{
+            							echo "Linux"
+        				 	       }
+    						}	
+   				 		else 
+						{
+							 //get auth token
 						def output = bat returnStdout: true, script: "${status}"
 						echo "Hello  ${output}"
 						def list = output.readLines()
@@ -43,6 +59,10 @@ pipeline
 						def arr = uploadFile.readLines()
 						def file = arr[arr.size()-1]
 						echo "File= ${file}"
+        					echo "Windows"
+						
+    				       		}
+						
 						
 					}
 					echo 'uploading'
